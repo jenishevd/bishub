@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "735071215022",
+    "project_id": "bishub-f6089",
+    "storage_bucket": "bishub-f6089.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735071215022:android:8ca0b7ce51718ed5507c3f",
+        "android_client_info": {
+          "package_name": "com.bishub.bishub_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735071215022-b77ibco1uq02fjulk69tee72ng9krvmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74xALLQ5tWfbn1XF143V-IQz7pIHSqAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735071215022-b77ibco1uq02fjulk69tee72ng9krvmd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "735071215022-v47cse8uhjltd824vp9ot44m52gekeep.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bishub.bishubApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

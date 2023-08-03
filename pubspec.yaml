@@ -1,0 +1,41 @@
+name: bishub_app
+description: BisHub project
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^8.1.3
+  flutter_screenutil:
+  dots_indicator:
+  intl:
+  cloud_firestore:
+  firebase_auth: ^4.7.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets: 
+    - assets/images/walking-png.png
+    - assets/images/bg-shape.png
+    - assets/icons/user.png
+    - assets/icons/lock.png
+  
+
+
