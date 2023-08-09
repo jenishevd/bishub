@@ -1,4 +1,5 @@
 import 'package:bishub_app/app_blocs.dart';
+import 'package:bishub_app/pages/bloc_providers.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:bishub_app/pages/sign_in/log_in/log_in.dart';
 import 'package:bishub_app/pages/sign_in/sign_up/sign_up.dart';
@@ -23,11 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => WelcomeBloc()),
-          BlocProvider(create: (context) => AppBlocs()),
-          BlocProvider(create: (context) => SignInBloc())
-        ],
+        providers: AppBlocProviders.AllBlocProviders,
         child: ScreenUtilInit(
           builder: (context, child) => MaterialApp(
             debugShowCheckedModeBanner: false,

@@ -91,7 +91,8 @@ Widget buildTextFieldLog(String hintText, String textType, String iconName,
   );
 }
 
-Widget buildButtonSignInLog(BuildContext context, void Function()? func) {
+Widget buildButtonSignInLog(
+    String buttonName, String buttonType, void Function()? func) {
   return GestureDetector(
     onTap: func,
     child: Container(
@@ -99,7 +100,7 @@ Widget buildButtonSignInLog(BuildContext context, void Function()? func) {
       width: 300.w,
       height: 40.h,
       decoration: BoxDecoration(
-          color: Colors.black,
+          color: buttonType == 'login' ? Colors.black : Colors.blueAccent,
           borderRadius: BorderRadius.all(Radius.circular(15.w)),
           boxShadow: [
             BoxShadow(
@@ -111,7 +112,7 @@ Widget buildButtonSignInLog(BuildContext context, void Function()? func) {
           ]),
       child: Center(
         child: Text(
-          "NEXT",
+          buttonName,
           style: TextStyle(
               color: Colors.white,
               fontSize: 16.sp,

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget firstText(BuildContext context) {
   return const Text(
-    'Register',
+    'Log In',
     maxLines: 2,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
@@ -62,7 +62,7 @@ Widget buildTextField(String hintText, String textType, String iconName,
           width: 270.w,
           height: 50.h,
           child: TextField(
-            //onChanged: (value) => func!(value),
+            onChanged: (value) => func!(value),
             keyboardType: TextInputType.multiline,
             decoration: InputDecoration(
                 hintText: hintText,
@@ -91,17 +91,16 @@ Widget buildTextField(String hintText, String textType, String iconName,
   );
 }
 
-Widget buildButtonSignIn(BuildContext context) {
+Widget buildButtonSignIn(
+    String buttonName, String buttonType, void Function()? func) {
   return GestureDetector(
-    onTap: () {
-      print('d');
-    },
+    onTap: func,
     child: Container(
       margin: EdgeInsets.only(top: 10, left: 25.w, right: 25.w),
       width: 300.w,
-      height: 45.h,
+      height: 40.h,
       decoration: BoxDecoration(
-          color: Colors.black,
+          color: buttonType == 'login' ? Colors.black : Colors.blueAccent,
           borderRadius: BorderRadius.all(Radius.circular(15.w)),
           boxShadow: [
             BoxShadow(
@@ -113,7 +112,7 @@ Widget buildButtonSignIn(BuildContext context) {
           ]),
       child: Center(
         child: Text(
-          "Sign Up",
+          buttonName,
           style: TextStyle(
               color: Colors.white,
               fontSize: 16.sp,

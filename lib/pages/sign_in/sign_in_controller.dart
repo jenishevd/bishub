@@ -17,10 +17,12 @@ class SignInController {
         String password = state.password;
         if (emailAddress.isEmpty) {
           toastInfo(msg: 'You need to fill email address');
+          return;
         }
 
         if (password.isEmpty) {
           toastInfo(msg: 'You need to fill password');
+          return;
         }
 
         try {
@@ -29,9 +31,11 @@ class SignInController {
                   email: emailAddress, password: password);
           if (credentials.user == null) {
             toastInfo(msg: 'User doesn not exist');
+            return;
           }
           if (!credentials.user!.emailVerified) {
             toastInfo(msg: 'You need to verify your email account');
+            return;
           }
           var user = credentials.user;
           if (user != null) {
@@ -39,6 +43,7 @@ class SignInController {
             //we got verified user from firebase
           } else {
             toastInfo(msg: 'Currently you are not a user of this app');
+            return;
             //we have error getting user from firebase
           }
         } on FirebaseAuthException catch (e) {

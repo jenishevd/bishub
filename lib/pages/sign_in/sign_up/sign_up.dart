@@ -2,7 +2,7 @@
 
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_events.dart';
-import 'package:bishub_app/pages/sign_in/sign_up/widgets/sign_up_widgets.dart';
+import '../common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +50,7 @@ class _logInState extends State<logIn> {
                   ],
                 ),
               ),
-              buildButtonSignIn(context),
+              buildButtonSignIn('Register', 'Sign Up', () {}),
             ],
           ),
         ),
