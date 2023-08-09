@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget firstText(BuildContext context) {
   return const Text(
-    'Register',
+    'Log In',
     maxLines: 2,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
@@ -62,7 +62,7 @@ Widget buildTextField(String hintText, String textType, String iconName,
           width: 270.w,
           height: 50.h,
           child: TextField(
-            //onChanged: (value) => func!(value),
+            onChanged: (value) => func!(value),
             keyboardType: TextInputType.multiline,
             decoration: InputDecoration(
                 hintText: hintText,

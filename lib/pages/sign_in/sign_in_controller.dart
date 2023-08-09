@@ -1,3 +1,4 @@
+import 'package:bishub_app/common/widgets/flutter_toast.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -15,29 +16,45 @@ class SignInController {
         String emailAddress = state.email;
         String password = state.password;
         if (emailAddress.isEmpty) {
-          //
+          toastInfo(msg: 'You need to fill email address');
         }
+
         if (password.isEmpty) {
-          //
+          toastInfo(msg: 'You need to fill password');
         }
+
         try {
           final credentials = await FirebaseAuth.instance
               .signInWithEmailAndPassword(
                   email: emailAddress, password: password);
           if (credentials.user == null) {
-            //
+            toastInfo(msg: 'User doesn not exist');
           }
           if (!credentials.user!.emailVerified) {
-            //
+            toastInfo(msg: 'You need to verify your email account');
           }
           var user = credentials.user;
           if (user != null) {
+            print('user exist');
             //we got verified user from firebase
           } else {
+            toastInfo(msg: 'Currently you are not a user of this app');
             //we have error getting user from firebase
           }
-        } catch (e) {}
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'user-not-found') {
+            toastInfo(msg: 'No user found that email');
+          } else if (e.code == 'wrong-password') {
+            toastInfo(msg: 'Wrong password provided that user');
+          } else if (e.code == 'invaliv-email') {
+            toastInfo(msg: 'Your email format is wrong');
+          } else if (e.code == 'invalid-email') {
+            toastInfo(msg: 'Your email format is wrong');
+          }
+        }
       }
-    } catch (e) {}
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }

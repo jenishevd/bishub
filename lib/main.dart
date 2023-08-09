@@ -1,8 +1,8 @@
 import 'package:bishub_app/app_blocs.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:bishub_app/pages/sign_in/log_in/log_in.dart';
-import 'package:bishub_app/pages/sign_in/switch_sign.dart';
 import 'package:bishub_app/pages/sign_in/sign_up/sign_up.dart';
+import 'package:bishub_app/pages/sign_in/switch_sign.dart';
 import 'package:bishub_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:bishub_app/pages/welcome/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             home: const Welcome(),
             routes: {
-              // "signIn": (context) => const SwitchSign(),
+              //"signIn": (context) => const SwitchSign(),
               "logIn": (context) => const logIn(),
               "signUp": (context) => const SignUp(),
             },
