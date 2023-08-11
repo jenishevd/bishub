@@ -1,6 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+AppBar buildAppBar(String type) {
+  return AppBar(
+    backgroundColor: Colors.white,
+    bottom: PreferredSize(
+      preferredSize: const Size.fromHeight(0.5),
+      child: Container(color: Colors.grey.withOpacity(0.5), height: 0.5),
+    ),
+    title: Text(
+      type,
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.normal,
+      ),
+    ),
+  );
+}
+
+Widget reusableText(String text) {
+  return Container(
+    margin: EdgeInsets.only(bottom: 5.h),
+    child: Text(
+      text,
+      style: TextStyle(
+        color: Colors.grey.withOpacity(1),
+        fontWeight: FontWeight.normal,
+        fontSize: 14.sp,
+      ),
+    ),
+  );
+}
+
 Widget firstText(BuildContext context) {
   return const Text(
     'Log In',
@@ -87,6 +119,25 @@ Widget buildTextField(String hintText, String textType, String iconName,
           ),
         ),
       ],
+    ),
+  );
+}
+
+Widget forgotPassword() {
+  return Container(
+    margin: EdgeInsets.only(left: 25.w),
+    width: 260.w,
+    height: 44.h,
+    child: GestureDetector(
+      onTap: () {},
+      child: Text(
+        'Forgot Password',
+        style: TextStyle(
+            color: Colors.black,
+            decoration: TextDecoration.underline,
+            decorationColor: Colors.blue,
+            fontSize: 12.sp),
+      ),
     ),
   );
 }

@@ -19,46 +19,42 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignInBloc, SignInState>(builder: (context, state) {
-      return Material(
-        child: Container(
-          color: Colors.white,
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 110, left: 50),
-                  child: firstText(context),
-                ),
-                const SizedBox(height: 50),
-                Row(children: [
-                  buildSwitch(context, 'email'),
-                  buildSwitch(context, 'Phone number')
-                ]),
-                Container(
-                  margin: EdgeInsets.only(top: 66.h),
-                  padding: EdgeInsets.only(left: 25.w, right: 25.w),
-                  child: Column(
-                    children: [
-                      buildTextField(
-                          'Enter your email address', 'email', 'user', (value) {
-                        context.read<SignInBloc>().add(EmailEvent(value));
-                      }),
-                      SizedBox(height: 10.h),
-                      buildTextField('Enter your password', 'password', 'lock',
-                          (value) {
-                        context.read<SignInBloc>().add(PasswordEvent(value));
-                      })
-                    ],
+      return Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: Scaffold(
+            backgroundColor: Colors.white,
+            appBar: buildAppBar('Sign in'),
+            body: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 66.h),
+                    padding: EdgeInsets.only(left: 25.w, right: 25.w),
+                    child: Column(
+                      children: [
+                        buildTextField(
+                            'Enter your email address', 'email', 'user',
+                            (value) {
+                          context.read<SignInBloc>().add(EmailEvent(value));
+                        }),
+                        SizedBox(height: 10.h),
+                        buildTextField(
+                            'Enter your password', 'password', 'lock', (value) {
+                          context.read<SignInBloc>().add(PasswordEvent(value));
+                        })
+                      ],
+                    ),
                   ),
-                ),
-                buildButtonSignIn('Log in', 'login', () {
-                  SignInController(context: context).handleSignIn('email');
-                }),
-                buildButtonSignIn('Register', 'register', () {
-                  Navigator.of(context).pushNamed('logIn');
-                }),
-              ],
+                  buildButtonSignIn('Log in', 'login', () {
+                    SignInController(context: context).handleSignIn('email');
+                  }),
+                  buildButtonSignIn('Sign Up', 'register', () {
+                    Navigator.of(context).pushNamed('logIn');
+                  }),
+                ],
+              ),
             ),
           ),
         ),

@@ -17,41 +17,77 @@ class logIn extends StatefulWidget {
 class _logInState extends State<logIn> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
+    return MaterialApp(
+      home: Container(
         color: Colors.white,
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 110, left: 50),
-                child: firstText(context),
+          child: Scaffold(
+            backgroundColor: Colors.white,
+            appBar: buildAppBar('Sign up'),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Center(
+                      child: reusableText(
+                          'Enter your details below & free sign up')),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 40.h),
+                        padding: EdgeInsets.only(left: 25.w, right: 25.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            reusableText('User name'),
+                            buildTextField(
+                                'Enter your user name', 'email', 'user',
+                                (value) {
+                              //context.read<SignInBloc>().add(EmailEvent(value));
+                            }),
+                            SizedBox(height: 10.h),
+                            reusableText('Email'),
+                            buildTextField(
+                                'Enter your email address', 'user', 'user',
+                                (value) {
+                              // context
+                              //     .read<SignInBloc>()
+                              //     .add(PasswordEvent(value));
+                            }),
+                            SizedBox(height: 10.h),
+                            reusableText('Password'),
+                            buildTextField(
+                                'Enter your password', 'password', 'lock',
+                                (value) {
+                              // context
+                              //     .read<SignInBloc>()
+                              //     .add(PasswordEvent(value));
+                            }),
+                            SizedBox(height: 10.h),
+                            reusableText('Confirm password'),
+                            buildTextField('Enter your Confirm Password',
+                                'password', 'lock', (value) {
+                              // context
+                              //     .read<SignInBloc>()
+                              //     .add(PasswordEvent(value));
+                            }),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20.h),
+                        child: reusableText(
+                            'By creating an account you have to agree with our them & condication.'),
+                      ),
+                      buildButtonSignIn('Sign Up', 'register', () {}),
+                    ],
+                  ),
+                ],
               ),
-              const SizedBox(height: 50),
-              Row(children: [
-                buildSwitch(context, 'email'),
-                buildSwitch(context, 'Phone number')
-              ]),
-              Container(
-                margin: EdgeInsets.only(top: 66.h),
-                padding: EdgeInsets.only(left: 25.w, right: 25.w),
-                child: Column(
-                  children: [
-                    buildTextField('Enter your email address', 'email', 'user',
-                        (value) {
-                      context.read<SignInBloc>().add(EmailEvent(value));
-                    }),
-                    SizedBox(height: 10.h),
-                    buildTextField('Enter your password', 'password', 'lock',
-                        (value) {
-                      context.read<SignInBloc>().add(PasswordEvent(value));
-                    })
-                  ],
-                ),
-              ),
-              buildButtonSignIn('Register', 'Sign Up', () {}),
-            ],
+            ),
           ),
         ),
       ),

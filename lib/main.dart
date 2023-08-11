@@ -28,6 +28,12 @@ class MyApp extends StatelessWidget {
         child: ScreenUtilInit(
           builder: (context, child) => MaterialApp(
             debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+                appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(color: Colors.black),
+              elevation: 0,
+              backgroundColor: Colors.white,
+            )),
             home: const Welcome(),
             routes: {
               //"signIn": (context) => const SwitchSign(),
