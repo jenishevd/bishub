@@ -125,7 +125,7 @@ Widget buildTextField(String hintText, String textType, String iconName,
 
 Widget forgotPassword() {
   return Container(
-    margin: EdgeInsets.only(left: 25.w),
+    //margin: EdgeInsets.only(left: 10.w),
     width: 260.w,
     height: 44.h,
     child: GestureDetector(
@@ -135,7 +135,7 @@ Widget forgotPassword() {
         style: TextStyle(
             color: Colors.black,
             decoration: TextDecoration.underline,
-            decorationColor: Colors.blue,
+            decorationColor: Colors.black,
             fontSize: 12.sp),
       ),
     ),

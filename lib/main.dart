@@ -1,4 +1,5 @@
 import 'package:bishub_app/app_blocs.dart';
+import 'package:bishub_app/pages/application/application_page.dart';
 import 'package:bishub_app/pages/bloc_providers.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:bishub_app/pages/sign_in/log_in/log_in.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               backgroundColor: Colors.white,
             )),
-            home: const Welcome(),
+            home: const ApplicationPage(),
             routes: {
               //"signIn": (context) => const SwitchSign(),
               "logIn": (context) => const logIn(),

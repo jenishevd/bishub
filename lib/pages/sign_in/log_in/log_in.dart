@@ -33,17 +33,21 @@ class _SignUpState extends State<SignUp> {
                     margin: EdgeInsets.only(top: 66.h),
                     padding: EdgeInsets.only(left: 25.w, right: 25.w),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        reusableText('Email'),
                         buildTextField(
                             'Enter your email address', 'email', 'user',
                             (value) {
                           context.read<SignInBloc>().add(EmailEvent(value));
                         }),
                         SizedBox(height: 10.h),
+                        reusableText('Password'),
                         buildTextField(
                             'Enter your password', 'password', 'lock', (value) {
                           context.read<SignInBloc>().add(PasswordEvent(value));
-                        })
+                        }),
+                        forgotPassword()
                       ],
                     ),
                   ),
