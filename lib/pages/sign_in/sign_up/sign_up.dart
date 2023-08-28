@@ -8,14 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class logIn extends StatefulWidget {
-  const logIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<logIn> createState() => _logInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _logInState extends State<logIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignUpBlocs, SignUpStates>(builder: (context, state) {
