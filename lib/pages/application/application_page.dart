@@ -41,8 +41,6 @@ class _ApplicationPageState extends State<ApplicationPage> {
                   setState(() {
                     _index = value;
                   });
-
-                  print('value');
                 },
                 elevation: 0,
                 type: BottomNavigationBarType.fixed,

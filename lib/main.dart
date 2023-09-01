@@ -1,8 +1,4 @@
-import 'package:bishub_app/common/routes/pages.dart';
-import 'package:bishub_app/pages/application/application_page.dart';
-import 'package:bishub_app/pages/sign_in/log_in/log_in.dart';
-import 'package:bishub_app/pages/sign_in/sign_up/sign_up.dart';
-import 'package:bishub_app/pages/welcome/welcome.dart';
+import 'package:bishub_app/common/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,13 +27,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               backgroundColor: Colors.white,
             )),
-            //home: const Welcome(),
             onGenerateRoute: AppPages.GenerateRouteSettings,
-            // routes: {
-            //   //"signIn": (context) => const SwitchSign(),
-            //   "logIn": (context) => const logIn(),
-            //   "signUp": (context) => const SignUp(),
-            // },
           ),
         ));
   }
