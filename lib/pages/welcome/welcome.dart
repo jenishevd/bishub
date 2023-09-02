@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'package:bishub_app/common/values/constant.dart';
+import 'package:bishub_app/global.dart';
 import 'package:bishub_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:bishub_app/pages/welcome/bloc/welcome_events.dart';
 import 'package:bishub_app/pages/welcome/bloc/welcome_states.dart';
@@ -117,6 +119,8 @@ class _WelcomeState extends State<Welcome> {
                   duration: const Duration(milliseconds: 300),
                   curve: Curves.decelerate);
             } else {
+              Global.storageService
+                  .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("/logIn", (route) => false);
             }

@@ -1,4 +1,9 @@
+import 'dart:math';
+
 import 'package:bishub_app/common/routes/names.dart';
+import 'package:bishub_app/global.dart';
+import 'package:bishub_app/pages/application/application_page.dart';
+import 'package:bishub_app/pages/application/bloc/app_blocs.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:bishub_app/pages/sign_in/log_in/log_in.dart';
 import 'package:bishub_app/pages/sign_in/sign_up/bloc/sign_up_blocs.dart';
@@ -31,9 +36,9 @@ class AppPages {
           )),
       PageEntity(
           route: AppRoutes.APPLICATION,
-          page: const Welcome(),
+          page: const ApplicationPage(),
           bloc: BlocProvider(
-            create: (_) => WelcomeBloc(),
+            create: (_) => AppBlocs(),
           )),
     ];
   }
@@ -53,6 +58,11 @@ class AppPages {
       //check for route name matching when Navigator gets trigger
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
+        bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+        if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
+          return MaterialPageRoute(
+              builder: (_) => const logIn(), settings: settings);
+        }
         return MaterialPageRoute(
             builder: (_) => result.first.page, settings: settings);
       }
