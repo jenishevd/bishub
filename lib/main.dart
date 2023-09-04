@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               backgroundColor: Colors.white,
             )),
-            onGenerateRoute: AppPages.GenerateRouteSettings,
+            onGenerateRoute: AppPages.generateRouteSettings,
           ),
         ));
   }

@@ -1,4 +1,6 @@
+import 'package:bishub_app/common/values/constant.dart';
 import 'package:bishub_app/common/widgets/flutter_toast.dart';
+import 'package:bishub_app/global.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +41,8 @@ class SignInController {
           }
           var user = credentials.user;
           if (user != null) {
-            print('user exist');
+            Global.storageService
+                .setString(AppConstants.STORATE_USER_TOKEN_KEY, '12345678');
             Navigator.of(context)
                 .pushNamedAndRemoveUntil('/application', (route) => false);
             //we got verified user from firebase

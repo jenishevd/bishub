@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'home/home_page.dart';
+
 Widget buildPage(int index) {
   List<Widget> _widget = const [
-    Center(child: Text('Home')),
+    HomePage(),
     Center(child: Text('Popular')),
     Center(child: Text('Events')),
     Center(child: Text('Meets')),
@@ -29,5 +31,8 @@ var bottomTabs = const [
     label: 'Meets',
     icon: Icon(Icons.meeting_room),
   ),
-  BottomNavigationBarItem(label: 'Profile', icon: Icon(Icons.portrait))
+  BottomNavigationBarItem(
+    label: 'Profile',
+    icon: Icon(Icons.portrait),
+  )
 ];

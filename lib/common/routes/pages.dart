@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:bishub_app/common/routes/names.dart';
 import 'package:bishub_app/global.dart';
 import 'package:bishub_app/pages/application/application_page.dart';
@@ -53,13 +51,18 @@ class AppPages {
   }
 
   // a model that covers entire screen as we click on navigator object
-  static MaterialPageRoute GenerateRouteSettings(RouteSettings settings) {
+  static MaterialPageRoute generateRouteSettings(RouteSettings settings) {
     if (settings.name != null) {
       //check for route name matching when Navigator gets trigger
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
         bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
         if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
+          bool isLoggedIn = Global.storageService.getIsLoggedIn();
+          if (isLoggedIn) {
+            return MaterialPageRoute(
+                builder: (_) => const ApplicationPage(), settings: settings);
+          }
           return MaterialPageRoute(
               builder: (_) => const logIn(), settings: settings);
         }
