@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
                 appBarTheme: const AppBarTheme(
-              iconTheme: IconThemeData(color: Colors.black),
+              iconTheme: IconThemeData(color: Colors.white),
               elevation: 0,
               backgroundColor: Colors.white,
             )),
