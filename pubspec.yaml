@@ -42,9 +42,12 @@ flutter:
   assets: 
     - assets/images/walking-png.png
     - assets/images/bg-shape.png
-    - assets/icons/user.png
     - assets/icons/lock.png
     - assets/images/sierra.png
-  
+    - assets/images/ololo.png
+    - assets/images/engl_school.png
+    - assets/images/zerno.png
+    - assets/images/noname.png
+    - assets/images/gapar.png
 
 

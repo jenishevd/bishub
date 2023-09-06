@@ -7,4 +7,6 @@ class AppRoutes {
   static const SIGN_IN = '/logIn';
   //register page
   static const REGISTER = '/signUp';
+  //Home cafe page
+  static const NESTED_CAFE = 'nestedCafe';
 }

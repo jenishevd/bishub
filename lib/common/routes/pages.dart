@@ -2,6 +2,7 @@ import 'package:bishub_app/common/routes/names.dart';
 import 'package:bishub_app/global.dart';
 import 'package:bishub_app/pages/application/application_page.dart';
 import 'package:bishub_app/pages/application/bloc/app_blocs.dart';
+import 'package:bishub_app/pages/application/home/nestedCafe/nestedCafe.dart';
 import 'package:bishub_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:bishub_app/pages/sign_in/log_in/log_in.dart';
 import 'package:bishub_app/pages/sign_in/sign_up/bloc/sign_up_blocs.dart';
@@ -35,6 +36,12 @@ class AppPages {
       PageEntity(
           route: AppRoutes.APPLICATION,
           page: const ApplicationPage(),
+          bloc: BlocProvider(
+            create: (_) => AppBlocs(),
+          )),
+      PageEntity(
+          route: AppRoutes.APPLICATION,
+          page: const NestedCafe(),
           bloc: BlocProvider(
             create: (_) => AppBlocs(),
           )),
