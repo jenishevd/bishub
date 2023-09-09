@@ -23,13 +23,14 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    buildSearch(),
                     Row(children: [
                       Align(
                           alignment: Alignment.topLeft,
                           child: mainText('Cafe')),
                       Padding(
-                        padding: const EdgeInsets.only(left: 170),
-                        child: moreBtn(context),
+                        padding: const EdgeInsets.only(right: 30),
+                        child: moreBtn(context, 'cafe'),
                       ),
                     ]),
                     mainCard(
@@ -38,28 +39,64 @@ class _HomePageState extends State<HomePage> {
                         'Свободных столиков',
                         'Средний чек: 750 сом',
                         "Киевская 74"),
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: mainText('Organizations')),
+                    Row(children: [
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: mainText('Organizations')),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: moreBtn(context, 'organizations'),
+                      )
+                    ]),
                     mainCard('Ololo', 'assets/images/ololo.png', 'Культурная',
                         'Dushabinka'),
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: mainText('Communities')),
+                    Row(
+                      children: [
+                        Align(
+                            alignment: Alignment.topLeft,
+                            child: mainText('Communities')),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 50),
+                          child: moreBtn(context, 'communities'),
+                        )
+                      ],
+                    ),
                     mainCard('Study Abroad', 'assets/images/engl_school.png',
                         'Образовательный', 'Online'),
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: mainText('Restaurants')),
+                    Row(
+                      children: [
+                        Align(
+                            alignment: Alignment.topLeft,
+                            child: mainText('Restaurants')),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 50),
+                            child: moreBtn(context, 'restaurants'))
+                      ],
+                    ),
                     mainCard('Zerno', 'assets/images/zerno.png',
                         'Свободных столиков', 'Средний чек: 750 сом'),
-                    Align(
-                        alignment: Alignment.topLeft, child: mainText('Bars')),
+                    Row(
+                      children: [
+                        Align(
+                            alignment: Alignment.topLeft,
+                            child: mainText('Bars')),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 50),
+                            child: moreBtn(context, 'bars'))
+                      ],
+                    ),
                     mainCard('Noname', 'assets/images/noname.png',
                         'Средний чек: 1100 сом', 'Dushabinka'),
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: mainText('Galleries/Museums')),
+                    Row(
+                      children: [
+                        Align(
+                            alignment: Alignment.topLeft,
+                            child: mainText('Galleries/Museums')),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 30),
+                            child: moreBtn(context, 'galleries'))
+                      ],
+                    ),
                     mainCard('Gapar Aitiev', 'assets/images/gapar.png',
                         'Образовательный', 'Пн-Пт', 'Dushabinka'),
                   ],

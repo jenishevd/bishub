@@ -1,13 +1,13 @@
+import 'package:bishub_app/pages/application/events/events_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'home/home_page.dart';
 
 Widget buildPage(int index) {
   List<Widget> _widget = const [
     HomePage(),
     Center(child: Text('Popular')),
-    Center(child: Text('Events')),
+    EventsPage(),
     Center(child: Text('Meets')),
     Center(child: Text('Profile'))
   ];

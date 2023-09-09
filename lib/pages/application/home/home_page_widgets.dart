@@ -1,3 +1,6 @@
+import 'package:bishub_app/pages/application/home/nestedHome/nestedCafe.dart';
+import 'package:bishub_app/pages/application/home/nestedHome/nestedCommunities.dart';
+import 'package:bishub_app/pages/application/home/nestedHome/nestedOrganizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,6 +22,12 @@ AppBar buildApplicationAppBar(String type) {
   );
 }
 
+Widget buildSearch() {
+  return TextField(
+    decoration: InputDecoration(fillColor: Colors.white),
+  );
+}
+
 Widget mainText(String name) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
@@ -34,10 +43,35 @@ Widget mainText(String name) {
   );
 }
 
-Widget moreBtn(BuildContext context) {
+Widget moreBtn(BuildContext context, String name) {
   return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed('/nestedCafe');
+        switch (name) {
+          case 'cafe':
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const NestedCafe()));
+            break;
+          case 'organizations':
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const NestedOrganizations()));
+            break;
+          case 'communities':
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const NestedCommunities()));
+            break;
+          case 'restaurants':
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const NestedCafe()));
+            break;
+          case 'bars':
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const NestedCafe()));
+            break;
+          case 'galleries':
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const NestedCafe()));
+            break;
+        }
       },
       child: const Text('See more...'));
 }
